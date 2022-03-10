@@ -8,10 +8,11 @@ import pandas as pd
 import time
 
 
+
+
 url_list=['https://redplanetscience.com/',"https://spaceimages-mars.com",'https://galaxyfacts-mars.com/',"https://marshemispheres.com/"]
-
-
-def scrape(url_list):
+def scrape():
+    url_list=['https://redplanetscience.com/',"https://spaceimages-mars.com",'https://galaxyfacts-mars.com/',"https://marshemispheres.com/"]
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
     data_dict={}
@@ -19,10 +20,12 @@ def scrape(url_list):
     browser.visit(url_list[0])
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser') 
-    element_ = soup.select_one("div.list_text")
-    data_dict["news_title"]=element_.find("div", class_="content_title").get_text()
-    data_dict["news_p"] =element_.find("div", class_="article_teaser_body").get_text()
-    data_dict["news_date"]=element_.find("div", class_="list_date").get_text() 
+    text = soup.select_one("div.list_text")
+    img=soup.select_one("div.list_image")
+    data_dict["news_title"]=text.find("div", class_="content_title").get_text()
+    data_dict["news_p"] =text.find("div", class_="article_teaser_body").get_text()
+    data_dict["news_date"]=text.find("div", class_="list_date").get_text() 
+    data_dict['news_img']=img.find("img").get('src')
     print("SUCCESS1") 
     #Featured Image
     browser.visit(url_list[1])
@@ -35,14 +38,18 @@ def scrape(url_list):
     data_dict["feuture_img_url"] = f"https://spaceimages-mars.com/{partial_img_url}"
     print("SUCCESS2") 
 
-
+    # Mars Facts
     tables = pd.read_html(url_list[2])
     df=tables[0]
     df.columns=df.iloc[0]
     df.drop(0,inplace=True)
-    df.to_html('table.html')
-    data_dict["tables"]=[df]
+    df.set_index('Mars - Earth Comparison' , inplace=True)
+    mars_df = df.to_html() 
+    mars_df =mars_df.replace("\n", "")
+    data_dict["tables"]=mars_df
     print("SUCCESS3") 
+
+    # Mars Hemispheres
     browser.visit(url_list[3])
     hemisphere_image_urls = []
     for item in range(4):
@@ -55,8 +62,11 @@ def scrape(url_list):
         browser.back()
     data_dict["hemisphere_image_urls"]=hemisphere_image_urls
     print("SUCCESS4") 
+
+    browser.quit()
     print(data_dict)
     return data_dict
+    
 
 
-scrape(url_list)
+scrape()
