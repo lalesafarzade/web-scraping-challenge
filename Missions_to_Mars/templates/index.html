@@ -8,6 +8,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="static\assets\css\style.css" />
+  <link rel="icon" href="Missions_to_Mars\templates\favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
@@ -15,7 +16,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
-<body class="is-preload">
+<body style="background-image: url(https://images.unsplash.com/photo-1599045151332-ff2587f03eb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed"></body>
   <!-- Header--> 
   
     <section id="banner">
@@ -24,7 +25,7 @@
           <span class="icon solid major fa-cloud"></span>
           <span class="icon solid major fa-cat-space"></span>
           <h1>Do you Want to scrap news about <strong>Mars?</strong><br /></h1><br>
-          <p>Get the latest Nasa news!</p><br>
+          <h5>Get the latest Nasa news!</h5><br><br>
           <ul class="actions special">
             
           <li><button type="button" class="btn btn-light"><a href="#one" class="button-scrolly">Scrape new Data</a></button></li>  <!--/scrape-->
@@ -37,24 +38,25 @@
 <!-- One -->
 <section id="one">
   <div class="container">
-    <div class="row"> 
+    <div class="row fact">
       <div class="col-lg-12 col-md-12">
-        <br><h3 class="t-Data2" style="text-align: center;">Latest Mars news!</h3>
-            <hr>
+        <br>
+        <h3 class="t-Data2" style="text-align: center;">Latest Mars news!</h3>
+        <hr>
       </div>
 
     </div>
-    <div class="row">
+    <div class="row fact">
       <div class="col-lg-4 col-md-12">
         <div class="box1">
-          <span class="rounded"><img class="nasa-img" src={{listings.news_img}} alt="" /></span>
+          <span class="rounded"><img class="img-thumbnail nasa-img" src={{listings.news_img}} alt="" /></span>
         </div>
 
       </div>
       <div class="col-lg-8 col-md-12">
         <div class="box2">
-          <h4 class="t-Data">{{listings.news_title}}</h4>
-          <hr width="90%">
+          <h4 class="t-Data">{{listings.news_title}}</h4><br>
+
           <p>{{listings.news_p}} ({{listings.news_date}})</p>
 
         </div>
@@ -64,26 +66,87 @@
     </div>
 
   </div>
+</section>
+<!-- Two -->
+<section id="two">
+  <div class="container">
+    <div class="row fact">
+      <div class="col-lg-12 col-md-12">
+        <br>
+        <h3 class="t-Data2" style="text-align: center;">Facts about mars!</h3>
+        <hr>
+      </div>
 
+    </div>
+    <div class="row fact">
+      <div class="col-lg-4 col-sm-12">
+        <div class="box1">
+          <span ><img class="nasa-img" src={{listings.feuture_img_url}} alt="" /><figcaption class="figure-caption" id="f_cap">Featured Mars Image</figcaption></span>
+          <br><p>​Mars is the fourth planet from the Sun, a dusty, cold, desert world with a very thin atmosphere. Mars is also a dynamic planet with seasons, polar ice caps, canyons, extinct volcanoes, and evidence that it was even more active in the past..</p>
+        </div>
 
-  <!-- Two -->
-  <section id="two" class="main style2">
-    <div class="container">
-      <div class="row gtr-150">
-        <div class="col-6 col-12-medium">
-          <table class="table-hover table-striped align-middle">{{listings.tables|safe}}</table>
+      </div>
+      <div class="col-lg-8 col-sm-12">
+        <div class="box2 table-responsive" style="overflow-x:auto; overflow-y:auto; max-height:auto; max-width: auto;">
+          
+
+          <table class="styled-table">{{listings.tables|safe}}</table><figcaption class="figure-caption" id="f_cap">Earth-Mars Comparison</figcaption>
+
         </div>
-        <div class="col-6 col-12-medium">
-          <header class="major">
-            <h2>Featured Mars Image<br /></h2>
-              <h5>Dusty Space Cloud</h5>
-          </header>
-          <span class="image fit"><img src={{listings.feuture_img_url}} alt="" /></span>
-        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Three -->
+<section id="three">
+  <div class="container">
+    <div class="row fact">
+      <div class="col-lg-12 col-md-12">
+        <br>
+        <h3 class="t-Data2" style="text-align: center;">Mars Hemispheres</h3><hr>
+        <p>The two hemispheres of Mars are more different from any other planet in our solar system. Non-​volcanic, flat lowlands characterise the northern hemisphere, while highlands punctuated by countless volcanoes extend across the southern hemisphere.</p>        
       </div>
     </div>
-  </section>
-  <!-- Three -->
+    <div class="row fact">
+      <div class="col-lg-3 col-sm-12">
+        <div class="box1">
+          <span><img class="image-fit" src={{listings.hemisphere_image_urls[0].img_url}} alt="" /></span>
+          <h6>{{listings.hemisphere_image_urls[0].title}}</h6>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <div class="box1">
+          <span><img class="image-fit" src={{listings.hemisphere_image_urls[1].img_url}} alt="" /></span>
+          <h6>{{listings.hemisphere_image_urls[1].title}}</h6>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <div class="box1">
+          <span><img class="image-fit" src={{listings.hemisphere_image_urls[2].img_url}} alt="" /></span>
+          <h6>{{listings.hemisphere_image_urls[2].title}}</h6>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12">
+        <div class="box1">
+          <span><img class="image-fit"src={{listings.hemisphere_image_urls[3].img_url}} alt="" /></span>
+          <h6>{{listings.hemisphere_image_urls[3].title}}</h6>
+        </div>
+      </div>
+      
+
+    </div>
+
+  </div>
+</section>
+
+
+
+ 
+  <!-- Three 
   <section id="three" class="main style1 special">
     <div class="container">
       <header class="major">
@@ -109,30 +172,20 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
   <!-- Footer -->
-  <section id="footer">
-    <ul class="icons">
-      <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-      <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-      <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-      <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-    </ul>
-    <ul class="copyright">
-      <li>&copy; Laleh Safarzadeh</li><li>3/10/2022</li>
-    </ul>
-  </section>
-
-<!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-
-
+  <footer class="footer-section" id="footer">
+    <div class="container">  
+      <br>
+      <br>
+      <a href="https://www.linkedin.com/in/lalehsafarzadeh/"><i class="social-icon fab fa-linkedin"></i></a>
+      <!--<i class="social-icon fas fa-address-card"></i>-->
+      <a href = "mailto: lalesafarzade@gmail.com"><i class="social-icon fas fa-envelope"></i></a>
+      <a href="https://github.com/lalesafarzade"><i class="social-icon fab fa-github"></i></a><br>
+      <p id="footer">© Copyright Laleh Safarzadeh 2022.</p>
+      
+    </div>
+  </footer>
   
 </body>
 </html>
