@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission to Mars</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="static\assets\css\style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body class="is-preload">
+  <!-- Header--> 
+  
+    <section id="banner">
+      <div class="container-fluid">
+        <div class="inner">
+          <span class="icon solid major fa-cloud"></span>
+          <span class="icon solid major fa-cat-space"></span>
+          <h1>Do you Want to scrap news about <strong>Mars?</strong><br /></h1><br>
+          <p>Get the latest Nasa news!</p><br>
+          <ul class="actions special">
+            
+          <li><button type="button" class="btn btn-light"><a href="#one" class="button-scrolly">Scrape new Data</a></button></li>  <!--/scrape-->
+        </ul>
+        </div>        
+      </div>
+    </section>
+
+
+<!-- One -->
+<section id="one">
+  <div class="container">
+    <div class="row"> 
+      <div class="col-lg-12 col-md-12">
+        <br><h3 class="t-Data2" style="text-align: center;">Latest Mars news!</h3>
+            <hr>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-12">
+        <div class="box1">
+          <span class="rounded"><img class="nasa-img" src={{listings.news_img}} alt="" /></span>
+        </div>
+
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <div class="box2">
+          <h4 class="t-Data">{{listings.news_title}}</h4>
+          <hr width="90%">
+          <p>{{listings.news_p}} ({{listings.news_date}})</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Two -->
+  <section id="two" class="main style2">
+    <div class="container">
+      <div class="row gtr-150">
+        <div class="col-6 col-12-medium">
+          <table class="table-hover table-striped align-middle">{{listings.tables|safe}}</table>
+        </div>
+        <div class="col-6 col-12-medium">
+          <header class="major">
+            <h2>Featured Mars Image<br /></h2>
+              <h5>Dusty Space Cloud</h5>
+          </header>
+          <span class="image fit"><img src={{listings.feuture_img_url}} alt="" /></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Three -->
+  <section id="three" class="main style1 special">
+    <div class="container">
+      <header class="major">
+        <h2>Mars Hemispheres</h2>
+      </header>
+      <p>The two hemispheres of Mars are more different from any other planet in our solar system. Non-​volcanic, flat lowlands characterise the northern hemisphere, while highlands punctuated by countless volcanoes extend across the southern hemisphere.</p>
+      <div class="row gtr-150">
+        <div class="col-3 col-12-medium">
+          <span class="image fit"><img src={{listings.hemisphere_image_urls[0].img_url}} alt="" /></span>
+          <h3>{{listings.hemisphere_image_urls[0].title}}</h3>
+        </div>
+        <div class="col-3 col-12-medium">
+          <span class="image fit"><img src={{listings.hemisphere_image_urls[1].img_url}} alt="" /></span>
+          <h3>{{listings.hemisphere_image_urls[1].title}}</h3>
+        </div>
+        <div class="col-3 col-12-medium">
+          <span class="image fit"><img src={{listings.hemisphere_image_urls[2].img_url}} alt="" /></span>
+          <h3>{{listings.hemisphere_image_urls[2].title}}</h3>
+        </div>
+        <div class="col-3 col-12-medium">
+          <span class="image fit"><img src={{listings.hemisphere_image_urls[3].img_url}} alt="" /></span>
+          <h3>{{listings.hemisphere_image_urls[3].title}}</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <section id="footer">
+    <ul class="icons">
+      <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+      <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+      <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+    </ul>
+    <ul class="copyright">
+      <li>&copy; Laleh Safarzadeh</li><li>3/10/2022</li>
+    </ul>
+  </section>
+
+<!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+
+  
+</body>
+</html>

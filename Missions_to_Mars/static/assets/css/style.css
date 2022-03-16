@@ -1,0 +1,69 @@
+
+
+#banner {
+    /* The image used */
+    background-image:
+      url(https://images.unsplash.com/photo-1599045151332-ff2587f03eb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    height: 40rem;
+    padding-top: 10rem;
+    color: aliceblue;
+    text-align: center; 
+    font-family: "Montserrat-Bold";  
+    
+  }
+
+  .button-scrolly{
+    color: rgb(5, 40, 70);
+    font-family: "Montserrat-Bold";
+  }
+  
+  .button-scrolly:hover{ color: aquamarine;
+
+  }
+
+  #one {
+    padding: 5%;
+    font-family: "Montserrat-Bold";
+  }
+
+  .news-row {
+    width: 90%;
+    margin: 10% auto 10% auto;
+    text-align: left;
+  }
+
+  .nasa-img{
+    background-color: #1b3fa300;
+  height: 100%;
+  width:100%; 
+  
+  margin-top: .7rem;
+  }
+
+  .news-h2 {
+    color: #050505;
+    font-family: "Montserrat-Bold";
+    font-size: 2rem;
+    font-weight: normal;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .box1 {
+    border-radius: 1rem;
+    margin-top: 1rem; 
+    margin-bottom: 3rem; 
+    
+    padding: 10px ; 
+    color:black;
+    background-color: #e7ebee00;
+  }
+  .box2 {
+    border-radius: 1rem;
+    margin-top: 1rem; 
+    margin-bottom: 3rem; 
+    padding: 10px ; 
+    color:black;
+    background-color: #e7ebee00;
+    
+  }
