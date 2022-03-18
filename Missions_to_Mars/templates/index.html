@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mission to Mars</title>
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="static\assets\css\style.css" />
   <link rel="icon" href="favicon.ico">
@@ -27,7 +28,7 @@
           <h1>Get the latest <strong>Nasa news!</strong><br /></h1><br>
           <ul class="actions special">
             
-          <li><button type="button" class="btn btn-light"><a href="/scrape" class="button-scrolly">Scrape new Data</a></button></li>  <!--/scrape-->
+          <li><button data-name="fact" type="button" class="btn btn-light"><a href="/scrape" class="button-scrolly">Scrape new Data</a></button></li>  <!--/scrape-->
         </ul>
         </div>        
       </div>
@@ -37,7 +38,7 @@
 <!-- One -->
 <section id="one">
   <div class="container">
-    <div class="row fact">
+    <div class="row fact default">
       <div class="col-lg-12 col-md-12">
         <br>
         <h3 class="t-Data2" style="text-align: center;">Latest Mars news!</h3>
@@ -45,7 +46,7 @@
       </div>
 
     </div>
-    <div class="row fact">
+    <div class="row fact default">
       <div class="col-lg-4 col-md-12">
         <div class="box1">
           <span class="rounded"><img class="img-thumbnail nasa-img" src={{listings.news_img}} alt="" /></span>
@@ -69,7 +70,7 @@
 <!-- Two -->
 <section id="two">
   <div class="container">
-    <div class="row fact">
+    <div class="row fact default">
       <div class="col-lg-12 col-md-12">
         <br>
         <h3 class="t-Data2" style="text-align: center;">Facts about Mars!</h3>
@@ -77,7 +78,7 @@
       </div>
 
     </div>
-    <div class="row fact">
+    <div class="row fact default">
       <div class="col-lg-4 col-sm-12">
         <div class="box1">
           <span ><img class="nasa-img" src={{listings.feuture_img_url}} alt="" /><figcaption class="figure-caption" id="f_cap">Featured Mars Image</figcaption></span>
@@ -103,14 +104,14 @@
 <!-- Three -->
 <section id="three">
   <div class="container">
-    <div class="row fact">
+    <div class="row fact default">
       <div class="col-lg-12 col-md-12">
         <br>
         <h3 class="t-Data2" style="text-align: center;">Mars Hemispheres</h3><hr>
         <p>The two hemispheres of Mars are more different from any other planet in our solar system. Non-​volcanic, flat lowlands characterise the northern hemisphere, while highlands punctuated by countless volcanoes extend across the southern hemisphere.</p>        
       </div>
     </div>
-    <div class="row fact">
+    <div class="row fact default">
       <div class="col-lg-3 col-sm-12">
         <div class="box1">
           <span><img class="image-fit" src={{listings.img_url_0}} alt="" /></span>
