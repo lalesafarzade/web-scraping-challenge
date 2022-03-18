@@ -20,8 +20,7 @@ def scraper():
     nasatable = mongo.db.nasaData
     mongo.db.nasaData.drop()
     listings_data = scrape_mars.scrape()
-    #nasatable.update_one({}, {"$set": listings_data}, upsert=True)
-    nasatable.insert_one(listings_data)
+    nasatable.update_one({}, {"$set": listings_data}, upsert=True)
     return redirect("/")
 
 
