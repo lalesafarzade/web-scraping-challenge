@@ -8,7 +8,7 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="static\assets\css\style.css" />
-  <link rel="icon" href="Missions_to_Mars\templates\favicon.ico">
+  <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
@@ -24,11 +24,10 @@
         <div class="inner">
           <span class="icon solid major fa-cloud"></span>
           <span class="icon solid major fa-cat-space"></span>
-          <h1>Do you want to know about <strong>Mars?</strong><br /></h1><br>
-          <h5>Get the latest Nasa news!</h5><br><br>
+          <h1>Get the latest <strong>Nasa news!</strong><br /></h1><br>
           <ul class="actions special">
             
-          <li><button type="button" class="btn btn-light"><a href="#one" class="button-scrolly">Scrape new Data</a></button></li>  <!--/scrape-->
+          <li><button type="button" class="btn btn-light"><a href="/scrape" class="button-scrolly">Scrape new Data</a></button></li>  <!--/scrape-->
         </ul>
         </div>        
       </div>
@@ -114,26 +113,26 @@
     <div class="row fact">
       <div class="col-lg-3 col-sm-12">
         <div class="box1">
-          <span><img class="image-fit" src={{listings.hemisphere_image_urls[0].img_url}} alt="" /></span>
-          <h6>{{listings.hemisphere_image_urls[0].title}}</h6>
+          <span><img class="image-fit" src={{listings.img_url_0}} alt="" /></span>
+          <h6>{{listings.title_0}}</h6>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12">
         <div class="box1">
-          <span><img class="image-fit" src={{listings.hemisphere_image_urls[1].img_url}} alt="" /></span>
-          <h6>{{listings.hemisphere_image_urls[1].title}}</h6>
+          <span><img class="image-fit" src={{listings.img_url_1}} alt="" /></span>
+          <h6>{{listings.title_1}}</h6>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12">
         <div class="box1">
-          <span><img class="image-fit" src={{listings.hemisphere_image_urls[2].img_url}} alt="" /></span>
-          <h6>{{listings.hemisphere_image_urls[2].title}}</h6>
+          <span><img class="image-fit" src={{listings.img_url_2}} alt="" /></span>
+          <h6>{{listings.title_2}}</h6>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12">
         <div class="box1">
-          <span><img class="image-fit"src={{listings.hemisphere_image_urls[3].img_url}} alt="" /></span>
-          <h6>{{listings.hemisphere_image_urls[3].title}}</h6>
+          <span><img class="image-fit" src={{listings.img_url_3}} alt="" /></span>
+          <h6>{{listings.title_3}}</h6>
         </div>
       </div>
       
@@ -143,36 +142,6 @@
   </div>
 </section>
 
-
-
- 
-  <!-- Three 
-  <section id="three" class="main style1 special">
-    <div class="container">
-      <header class="major">
-        <h2>Mars Hemispheres</h2>
-      </header>
-      <p>The two hemispheres of Mars are more different from any other planet in our solar system. Non-​volcanic, flat lowlands characterise the northern hemisphere, while highlands punctuated by countless volcanoes extend across the southern hemisphere.</p>
-      <div class="row gtr-150">
-        <div class="col-3 col-12-medium">
-          <span class="image fit"><img src={{listings.hemisphere_image_urls[0].img_url}} alt="" /></span>
-          <h3>{{listings.hemisphere_image_urls[0].title}}</h3>
-        </div>
-        <div class="col-3 col-12-medium">
-          <span class="image fit"><img src={{listings.hemisphere_image_urls[1].img_url}} alt="" /></span>
-          <h3>{{listings.hemisphere_image_urls[1].title}}</h3>
-        </div>
-        <div class="col-3 col-12-medium">
-          <span class="image fit"><img src={{listings.hemisphere_image_urls[2].img_url}} alt="" /></span>
-          <h3>{{listings.hemisphere_image_urls[2].title}}</h3>
-        </div>
-        <div class="col-3 col-12-medium">
-          <span class="image fit"><img src={{listings.hemisphere_image_urls[3].img_url}} alt="" /></span>
-          <h3>{{listings.hemisphere_image_urls[3].title}}</h3>
-        </div>
-      </div>
-    </div>
-  </section>-->
   <!-- Footer -->
   <footer class="footer-section" id="footer">
     <div class="container">  

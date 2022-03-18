@@ -5,22 +5,24 @@ import scrape_mars
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/nasa_app"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/nasa_data"
 mongo = PyMongo(app)
 
 
 @app.route("/")
 def home():
-    listings = mongo.db.listings.find_one()
-    return render_template("index.html", listings=listings)
+    scrap_data = mongo.db.nasaData.find_one()
+    return render_template("index.html", listings=scrap_data)
 
 
 @app.route("/scrape")
 def scraper():
-    listings = mongo.db.listings
+    nasatable = mongo.db.nasaData
+    mongo.db.nasaData.drop()
     listings_data = scrape_mars.scrape()
-    listings.update_one({}, {"$set": listings_data}, upsert=True)
-    return redirect("/", code=302)
+    #nasatable.update_one({}, {"$set": listings_data}, upsert=True)
+    nasatable.insert_one(listings_data)
+    return redirect("/")
 
 
 if __name__ == "__main__":

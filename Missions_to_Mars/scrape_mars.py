@@ -29,9 +29,9 @@ def scrape():
     print("SUCCESS1") 
     #Featured Image
     browser.visit(url_list[1])
-    time.sleep(3)
+    time.sleep(1)
     browser.find_by_css('.fancybox-thumbs').click() 
-    time.sleep(3)
+    time.sleep(1)
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
     partial_img_url=soup.select_one("img.fancybox-image" ).get("src")
@@ -44,23 +44,25 @@ def scrape():
     df.columns=df.iloc[0]
     df.drop(0,inplace=True)
     df.set_index('Mars - Earth Comparison' , inplace=True)
+    #mars_df = df.to_html(index=False) 
     mars_df = df.to_html() 
     mars_df =mars_df.replace("\n", "")
     data_dict["tables"]=mars_df
     print("SUCCESS3") 
 
+
+
     # Mars Hemispheres
     browser.visit(url_list[3])
-    hemisphere_image_urls = []
+    
     for item in range(4):
-        hemisphere = {}
+        
         browser.find_by_css("a.product-item h3")[item].click()
         sample_element = browser.links.find_by_text("Sample").first
-        hemisphere["img_url"] = sample_element["href"]        
-        hemisphere["title"] = browser.find_by_css("h2.title").text
-        hemisphere_image_urls.append(hemisphere)  
+        data_dict[f"img_url_{item}"] = sample_element["href"]        
+        data_dict[f"title_{item}"] = browser.find_by_css("h2.title").text
         browser.back()
-    data_dict["hemisphere_image_urls"]=hemisphere_image_urls
+        time.sleep(1)
     print("SUCCESS4") 
 
     browser.quit()
@@ -68,5 +70,3 @@ def scrape():
     return data_dict
     
 
-
-scrape()
